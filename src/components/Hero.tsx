@@ -1,10 +1,6 @@
-import AnimatedBg from "./AnimatedBg";
-
 export default function Hero() {
   return (
-    <section id="top" className="relative mx-auto grid max-w-[1200px] items-center gap-12 overflow-hidden px-6 py-20 md:min-h-[min(100dvh,720px)] md:grid-cols-[1.3fr_0.7fr] md:py-24">
-      <AnimatedBg />
-
+    <section id="top" className="relative mx-auto grid max-w-[1200px] items-center gap-12 px-6 py-20 md:min-h-[min(100dvh,720px)] md:grid-cols-[1.3fr_0.7fr] md:py-24">
       <div className="relative z-10">
         <span className="mb-7 inline-flex items-center gap-[0.55rem] rounded-full border border-line bg-paper/70 px-4 py-2 pl-3 text-sm font-medium text-ink backdrop-blur-sm">
           <span className="h-2 w-2 flex-none rounded-full bg-accent" aria-hidden="true" />

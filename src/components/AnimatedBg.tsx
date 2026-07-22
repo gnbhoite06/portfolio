@@ -26,9 +26,8 @@ export default function AnimatedBg() {
     let height = 0;
 
     const resize = () => {
-      const rect = canvas.getBoundingClientRect();
-      width = rect.width;
-      height = rect.height;
+      width = window.innerWidth;
+      height = window.innerHeight;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -42,9 +41,10 @@ export default function AnimatedBg() {
         window.matchMedia("(prefers-color-scheme: dark)").matches);
 
     const orbs: Orb[] = [
-      { baseX: 0.78, baseY: 0.18, radius: 0.34, speedX: 0.00011, speedY: 0.00014, phase: 0, color: "76,175,130" },
-      { baseX: 0.18, baseY: 0.32, radius: 0.24, speedX: 0.00016, speedY: 0.00009, phase: 2.1, color: "76,175,130" },
-      { baseX: 0.55, baseY: 0.65, radius: 0.28, speedX: 0.00012, speedY: 0.00017, phase: 4.2, color: "31,92,63" },
+      { baseX: 0.82, baseY: 0.1, radius: 0.42, speedX: 0.00009, speedY: 0.00012, phase: 0, color: "76,175,130" },
+      { baseX: 0.1, baseY: 0.4, radius: 0.34, speedX: 0.00013, speedY: 0.00008, phase: 2.1, color: "76,175,130" },
+      { baseX: 0.6, baseY: 0.85, radius: 0.38, speedX: 0.0001, speedY: 0.00015, phase: 4.2, color: "31,92,63" },
+      { baseX: 0.9, baseY: 0.6, radius: 0.3, speedX: 0.00011, speedY: 0.00011, phase: 1.4, color: "76,175,130" },
     ];
 
     let rafId = 0;
@@ -52,7 +52,7 @@ export default function AnimatedBg() {
     const draw = (t: number) => {
       ctx.clearRect(0, 0, width, height);
       const dark = isDark();
-      const alpha = dark ? 0.22 : 0.16;
+      const alpha = dark ? 0.16 : 0.12;
 
       orbs.forEach((orb) => {
         const dx = Math.sin(t * orb.speedX + orb.phase) * 0.06;
@@ -88,8 +88,8 @@ export default function AnimatedBg() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 h-full w-full"
-      style={{ filter: "blur(40px)" }}
+      className="pointer-events-none fixed inset-0 -z-10 h-screen w-screen"
+      style={{ filter: "blur(60px)" }}
     />
   );
 }

@@ -1,4 +1,5 @@
 import Nav from "./components/Nav";
+import AnimatedBg from "./components/AnimatedBg";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Stats from "./components/Stats";
@@ -19,6 +20,7 @@ function App() {
         Skip to content
       </a>
 
+      <AnimatedBg />
       <Nav />
 
       <main id="main">
