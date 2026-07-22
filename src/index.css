@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f6f6f3;
+  --paper-raised: #eeeee9;
+  --ink: #15170f;
+  --ink-soft: #4a4d43;
+  --line: rgba(21, 23, 15, 0.12);
+  --accent: #1f5c3f;
+  --accent-strong: #163f2b;
+  --accent-tint: #e4ede7;
+}
+
+:root[data-theme="dark"] {
+  --paper: #101210;
+  --paper-raised: #171a16;
+  --ink: #edeee7;
+  --ink-soft: #a9ada0;
+  --line: rgba(237, 238, 231, 0.14);
+  --accent: #4caf82;
+  --accent-strong: #6fc79a;
+  --accent-tint: rgba(76, 175, 130, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #101210;
+    --paper-raised: #171a16;
+    --ink: #edeee7;
+    --ink-soft: #a9ada0;
+    --line: rgba(237, 238, 231, 0.14);
+    --accent: #4caf82;
+    --accent-strong: #6fc79a;
+    --accent-tint: rgba(76, 175, 130, 0.14);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
