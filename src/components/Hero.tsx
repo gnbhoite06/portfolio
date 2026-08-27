@@ -11,11 +11,11 @@ export default function Hero() {
           className="max-w-[20ch] pb-[0.15em] text-[2.4rem] italic leading-[1.05] tracking-[-1px] text-ink sm:text-5xl md:text-6xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
-          Venture capital, deal sourcing, and diligence.
+          Venture capital and startups.
         </h1>
 
         <p className="mt-6 max-w-[46ch] text-lg leading-relaxed text-ink-soft">
-          I work across venture capital, deal sourcing, and startup diligence, while studying at BITS Pilani, Goa.
+          I work across venture capital and early-stage startups, while studying at BITS Pilani, Goa.
         </p>
 
         <div className="mt-8">
