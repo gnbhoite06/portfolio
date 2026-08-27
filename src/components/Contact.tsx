@@ -75,7 +75,7 @@ export default function Contact() {
     <section id="contact" className="mx-auto max-w-[1200px] px-6 py-[5.5rem]">
       <h2 className="mb-10 text-[0.85rem] font-semibold uppercase tracking-[0.08em] text-ink-soft">Contact</h2>
       <p className="mb-10 max-w-[42ch] text-xl text-ink">
-        Always happy to talk about startups, product, or the next interesting problem. Reach out.
+        Always happy to talk about startups, venture capital, or the next interesting deal. Reach out.
       </p>
 
       <ul className="flex flex-col">
