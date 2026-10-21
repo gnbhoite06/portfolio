@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { useCountUp } from "../hooks/useCountUp";
 
 const stats = [
-  { prefix: "", target: 100, suffix: "+", label: "Early-stage startups sourced and evaluated at Campus Fund", variant: "filled" },
-  { prefix: "", target: 4000, suffix: "+", label: "Students represented as General Secretary", variant: "default" },
-  { prefix: "", target: 300, suffix: "+", label: "Builder applications evaluated for Hack47's residency", variant: "default" },
-  { prefix: "", target: 60, suffix: "+", label: "Clubs and 25+ sports teams overseen as General Secretary", variant: "outline" },
+  { prefix: "", target: 100, suffix: "+", label: "Early-stage startups sourced and evaluated at Campus Fund" },
+  { prefix: "", target: 4000, suffix: "+", label: "Students represented as General Secretary" },
+  { prefix: "", target: 300, suffix: "+", label: "Builder applications evaluated for Hack47's residency" },
+  { prefix: "", target: 60, suffix: "+", label: "Clubs and 25+ sports teams overseen as General Secretary" },
 ] as const;
 
 function formatNumber(n: number) {
@@ -42,16 +42,16 @@ function StatTile({ stat, index }: { stat: (typeof stats)[number]; index: number
     <div
       ref={ref}
       style={{ transitionDelay: prefersReduced ? "0ms" : `${index * 90}ms` }}
-      className={`group flex flex-col gap-[0.6rem] p-10 transition-all duration-500 ${
-        prefersReduced || active ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-      } ${stat.variant === "filled" ? "bg-accent text-paper" : stat.variant === "outline" ? "bg-accent-tint" : "bg-paper hover:bg-paper-raised"}`}
+      className={`flex flex-col gap-3 border-b border-line py-8 transition-all duration-500 last:border-b-0 sm:border-b-0 sm:px-6 sm:[&:nth-child(odd)]:pl-0 md:border-l md:first:border-l-0 md:first:pl-0 ${
+        prefersReduced || active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+      }`}
     >
-      <span className={`font-mono text-[2rem] font-medium tabular-nums ${stat.variant === "filled" ? "text-paper" : "text-ink"}`}>
+      <span className="font-serif text-[3.25rem] leading-none tracking-[-0.02em] text-ink [font-variant-numeric:lining-nums_tabular-nums]">
         {stat.prefix}
         {formatNumber(value)}
         {stat.suffix}
       </span>
-      <span className={`text-sm leading-[1.4] ${stat.variant === "filled" ? "text-paper" : "text-ink-soft"}`}>{stat.label}</span>
+      <span className="max-w-[24ch] text-sm leading-[1.45] text-ink-soft">{stat.label}</span>
     </div>
   );
 }
@@ -59,7 +59,7 @@ function StatTile({ stat, index }: { stat: (typeof stats)[number]; index: number
 export default function Stats() {
   return (
     <section className="mx-auto max-w-[1200px] px-6">
-      <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 md:grid-cols-4">
+      <div className="grid grid-cols-1 border-y border-line sm:grid-cols-2 md:grid-cols-4">
         {stats.map((stat, i) => (
           <StatTile key={stat.label} stat={stat} index={i} />
         ))}

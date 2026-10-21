@@ -1,4 +1,5 @@
 import { useReveal } from "../hooks/useReveal";
+import Section from "./Section";
 
 const roles = [
   {
@@ -15,30 +16,28 @@ const roles = [
   },
 ];
 
-function Card({ role }: { role: (typeof roles)[number] }) {
+function Row({ role }: { role: (typeof roles)[number] }) {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <div
-      ref={ref}
-      className="reveal flex flex-col gap-2 rounded-2xl border border-transparent bg-paper-raised p-9 transition-all duration-300 hover:-translate-y-1 hover:border-line hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
-    >
-      <span className="font-mono text-[0.8rem] text-accent">{role.dates}</span>
-      <h3 className="mt-1 text-xl font-semibold text-ink">{role.title}</h3>
-      <p className="mb-[0.6rem] text-sm text-ink-soft">{role.org}</p>
-      <p className="text-[0.98rem] leading-[1.6] text-ink-soft">{role.body}</p>
+    <div ref={ref} className="reveal grid gap-2 border-b border-line py-8 first:pt-1 md:grid-cols-[150px_1fr] md:gap-8">
+      <span className="pt-1 font-mono text-[0.78rem] text-ink-soft">{role.dates}</span>
+      <div>
+        <h3 className="text-[1.15rem] font-medium leading-snug text-ink">{role.title}</h3>
+        <p className="mt-1 font-serif text-[1.05rem] italic text-ink-soft">{role.org}</p>
+        <p className="mt-3 max-w-[62ch] text-base leading-[1.65] text-ink-soft">{role.body}</p>
+      </div>
     </div>
   );
 }
 
 export default function Leadership() {
   return (
-    <section id="leadership" className="mx-auto max-w-[1200px] px-6 py-[5.5rem]">
-      <h2 className="mb-10 text-[0.85rem] font-semibold uppercase tracking-[0.08em] text-ink-soft">Leadership</h2>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <Section id="leadership" title="Leadership">
+      <div className="flex flex-col">
         {roles.map((role) => (
-          <Card key={role.title} role={role} />
+          <Row key={role.title} role={role} />
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

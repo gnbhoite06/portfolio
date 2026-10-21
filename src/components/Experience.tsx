@@ -1,4 +1,5 @@
 import { useReveal } from "../hooks/useReveal";
+import Section from "./Section";
 
 const roles = [
   {
@@ -62,15 +63,15 @@ const roles = [
 function Row({ role }: { role: (typeof roles)[number] }) {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <div ref={ref} className="reveal grid grid-cols-1 gap-3 border-t border-line py-8 last:border-b md:grid-cols-[220px_1fr] md:gap-8">
-      <div className="flex flex-col gap-[0.35rem]">
-        <span className="font-mono text-[0.82rem] text-ink-soft">{role.dates}</span>
-        <span className="text-[0.98rem] font-medium text-ink">{role.org}</span>
-        <span className="text-[0.82rem] leading-[1.5] text-ink-soft/80">{role.orgDesc}</span>
-      </div>
+    <div ref={ref} className="reveal grid gap-2 border-b border-line py-8 first:pt-1 md:grid-cols-[150px_1fr] md:gap-8">
+      <span className="pt-1 font-mono text-[0.78rem] text-ink-soft">{role.dates}</span>
       <div>
-        <h3 className="mb-[0.6rem] text-xl font-semibold text-ink">{role.title}</h3>
-        <p className="max-w-[62ch] text-base leading-[1.6] text-ink-soft">{role.body}</p>
+        <h3 className="text-[1.15rem] font-medium leading-snug text-ink">
+          {role.title} <span className="font-serif text-[1.2rem] italic text-ink-soft">at</span>{" "}
+          <span className="font-serif text-[1.25rem] italic">{role.org}</span>
+        </h3>
+        <p className="mt-1 max-w-[62ch] text-[0.85rem] leading-[1.55] text-ink-soft/80">{role.orgDesc}</p>
+        <p className="mt-3 max-w-[62ch] text-base leading-[1.65] text-ink-soft">{role.body}</p>
       </div>
     </div>
   );
@@ -78,13 +79,12 @@ function Row({ role }: { role: (typeof roles)[number] }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-[1200px] px-6 py-[5.5rem]">
-      <h2 className="mb-10 text-[0.85rem] font-semibold uppercase tracking-[0.08em] text-ink-soft">Experience</h2>
+    <Section id="experience" title="Experience">
       <div className="flex flex-col">
         {roles.map((role) => (
           <Row key={`${role.org}-${role.title}`} role={role} />
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

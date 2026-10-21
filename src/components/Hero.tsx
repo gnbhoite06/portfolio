@@ -1,43 +1,43 @@
 export default function Hero() {
   return (
-    <section id="top" className="relative mx-auto grid max-w-[1200px] items-center gap-12 px-6 py-20 md:min-h-[min(100dvh,720px)] md:grid-cols-[1.3fr_0.7fr] md:py-24">
-      <div className="relative z-10">
-        <span className="mb-7 inline-flex items-center gap-[0.55rem] rounded-full border border-line bg-paper/70 px-4 py-2 pl-3 text-sm font-medium text-ink backdrop-blur-sm">
-          <span className="h-2 w-2 flex-none rounded-full bg-accent" aria-hidden="true" />
-          Gandharv Bhoite
-        </span>
+    <section
+      id="top"
+      className="mx-auto grid max-w-[1200px] gap-12 px-6 pb-16 pt-14 md:grid-cols-[1fr_260px] md:items-end md:pb-24 md:pt-28"
+    >
+      <div>
+        <p className="mb-8 font-mono text-[0.78rem] text-ink-soft">
+          Currently on the investments team at <span className="text-ink">Boundless Ventures</span>
+        </p>
 
-        <h1
-          className="max-w-[20ch] pb-[0.15em] text-[2.4rem] italic leading-[1.05] tracking-[-1px] text-ink sm:text-5xl md:text-6xl"
-          style={{ fontFamily: "'Instrument Serif', serif" }}
-        >
-          Venture capital and startups.
+        <h1 className="max-w-[14ch] font-serif text-[2.9rem] font-normal leading-[1.02] tracking-[-0.02em] text-ink [text-wrap:balance] sm:text-6xl md:text-[5.5rem]">
+          Venture capital and <em className="text-accent">startups</em>.
         </h1>
 
-        <p className="mt-6 max-w-[46ch] text-lg leading-relaxed text-ink-soft">
+        <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-ink-soft">
           I work across venture capital and early-stage startups, while studying at BITS Pilani, Goa.
         </p>
 
-        <div className="mt-8">
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-accent px-6 py-[0.85rem] text-[0.95rem] font-medium text-paper transition-transform duration-150 hover:bg-accent-strong active:scale-[0.98]"
-          >
-            Get in touch
-          </a>
-        </div>
+        <a
+          href="#contact"
+          className="group mt-10 inline-flex items-center gap-2 border-b border-ink pb-1 text-[0.95rem] font-medium text-ink transition-colors duration-200 hover:border-accent hover:text-accent"
+        >
+          Get in touch
+          <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
+            &rarr;
+          </span>
+        </a>
       </div>
 
-      <div className="group relative z-10 mx-auto hidden aspect-square w-full max-w-[320px] rounded-full border border-line bg-paper-raised shadow-[0_24px_60px_rgba(0,0,0,0.12)] transition-transform duration-500 ease-out hover:-translate-y-1 hover:rotate-1 md:block">
-        <div className="absolute -inset-3.5 rounded-full border border-line transition-transform duration-500 ease-out group-hover:scale-105" aria-hidden="true" />
+      <figure className="hidden md:block">
         <img
           src="/assets/headshot.png"
           alt="Gandharv Bhoite"
           width={400}
           height={400}
-          className="relative z-[1] h-full w-full rounded-full object-cover grayscale contrast-[1.05] transition-all duration-500 group-hover:grayscale-0"
+          className="aspect-square w-full rounded-[2px] object-cover grayscale contrast-[1.05] transition-[filter] duration-700 hover:grayscale-0"
         />
-      </div>
+        <figcaption className="mt-3 font-mono text-[0.72rem] text-ink-soft">Gandharv Bhoite, Goa</figcaption>
+      </figure>
     </section>
   );
 }

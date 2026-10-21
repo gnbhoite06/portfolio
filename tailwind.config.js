@@ -15,7 +15,8 @@ export default {
         "accent-tint": "var(--accent-tint)",
       },
       fontFamily: {
-        display: ["Outfit", "sans-serif"],
+        sans: ["Instrument Sans", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        serif: ["Newsreader", "Georgia", "serif"],
         mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
       },
     },

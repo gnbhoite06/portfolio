@@ -1,5 +1,4 @@
 import Nav from "./components/Nav";
-import AnimatedBg from "./components/AnimatedBg";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Stats from "./components/Stats";
@@ -15,12 +14,11 @@ function App() {
     <>
       <a
         href="#main"
-        className="fixed left-4 top-0 z-[100] -translate-y-16 rounded-md bg-accent px-4 py-3 text-paper transition-transform focus:translate-y-4"
+        className="fixed left-4 top-0 z-[100] -translate-y-16 rounded-[2px] bg-accent px-4 py-3 text-paper transition-transform focus:translate-y-4"
       >
         Skip to content
       </a>
 
-      <AnimatedBg />
       <Nav />
 
       <main id="main">
