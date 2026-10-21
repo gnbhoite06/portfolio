@@ -52,9 +52,7 @@ export default function Nav() {
             </button>
 
             <a
-              href="https://calendly.com/gandharv-bhoite-yourcampusfund/30min"
-              target="_blank"
-              rel="noopener"
+              href="#contact"
               className="hidden rounded-full bg-accent px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-accent-strong sm:inline-flex"
             >
               Get in touch

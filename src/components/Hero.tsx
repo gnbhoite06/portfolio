@@ -20,9 +20,7 @@ export default function Hero() {
 
         <div className="mt-8">
           <a
-            href="https://calendly.com/gandharv-bhoite-yourcampusfund/30min"
-            target="_blank"
-            rel="noopener"
+            href="#contact"
             className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-accent px-6 py-[0.85rem] text-[0.95rem] font-medium text-paper transition-transform duration-150 hover:bg-accent-strong active:scale-[0.98]"
           >
             Get in touch

@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { useCountUp } from "../hooks/useCountUp";
 
 const stats = [
-  { prefix: "$", target: 100, suffix: "M", label: "Campus Fund's latest and largest fund", variant: "filled" },
+  { prefix: "", target: 100, suffix: "+", label: "Early-stage startups sourced and evaluated at Campus Fund", variant: "filled" },
   { prefix: "", target: 4000, suffix: "+", label: "Students represented as General Secretary", variant: "default" },
-  { prefix: "", target: 50, suffix: "+", label: "Early-stage startups sourced and evaluated at Campus Fund", variant: "default" },
+  { prefix: "", target: 300, suffix: "+", label: "Builder applications evaluated for Hack47's residency", variant: "default" },
   { prefix: "", target: 60, suffix: "+", label: "Clubs and 25+ sports teams overseen as General Secretary", variant: "outline" },
 ] as const;
 

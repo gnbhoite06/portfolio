@@ -2,32 +2,11 @@ import { useReveal } from "../hooks/useReveal";
 
 const roles = [
   {
-    dates: "Jul 2026 – Present",
-    org: "Redstring",
-    orgDesc: "A hiring platform used by 50+ companies, cutting average hiring turnaround from 23 days to under 3, backed by IIM Lucknow and TiE Hyderabad.",
-    title: "Growth & Strategy",
-    body: "Drive growth strategy across a platform used by 50+ companies, including Swipe (YC), Scale Jobs, Keystone Robotix, Neuralis, Neogreens, and 18startup, supporting hiring from entry-level to CXO-level roles alongside the founding team.",
-  },
-  {
-    dates: "Jun 2026 – Present",
-    org: "Campus Fund",
-    orgDesc: "SEBI-registered AIF backing student founders in India. $100M latest fund, cheques up to $1M, 35+ portfolio companies.",
-    title: "Investment Associate",
-    body: "Sourced and evaluated 50+ early-stage startups for India's largest student-run VC fund, writing cheques of up to $1M. Ran 30+ founder due diligence meetings and drafted investment memos that inform partner decisions.",
-  },
-  {
-    dates: "Jul 2026 – Present",
-    org: "Hack47",
-    orgDesc: "A 30-day, distraction-free hacker residency in Delhi, housing 16 builders at a time to focus purely on shipping.",
-    title: "Prophet",
-    body: "Lead strategy and growth for a residency housing 16 builders at a time, refining how we find, assess, and select the right people to work with, and using my network to back the ones worth betting on.",
-  },
-  {
-    dates: "Feb – Jul 2026",
-    org: "Mohur",
-    orgDesc: "A startup intelligence platform connecting founders to funding and ecosystem partners.",
-    title: "Growth",
-    body: "Led 3 strategic partnerships with VCs, accelerators, and ecosystem partners, and grew an engaged community of 1,000+ founders, driving 20,000+ impressions and 50% follower growth.",
+    dates: "Sep 2026 – Present",
+    org: "Boundless Ventures",
+    orgDesc: "An AI and frontier tech fund founded by Natasha Malpani in 2025, backing AI-native founders across science, systems, and identity. Portfolio includes Piersight, Armatrix, Superhealth, KNOT, Alter, Aspera Industries, Glide, and Shram.",
+    title: "Investments Team Intern",
+    body: "Source and evaluate early-stage companies that fit the fund's thesis across science, systems, and identity, and work on internal thesis development and market mapping to spot emerging categories early.",
   },
   {
     dates: "Feb 2026 – Present",
@@ -35,6 +14,34 @@ const roles = [
     orgDesc: "The world's largest student-run consultancy, advising social enterprises and nonprofits pro bono.",
     title: "Consultant",
     body: "Advise clients, including social enterprises and nonprofits, on strategy and growth.",
+  },
+  {
+    dates: "Jul – Oct 2026",
+    org: "Hack47",
+    orgDesc: "A 30-day, distraction-free hacker residency in Delhi, housing 16 builders at a time to focus purely on shipping.",
+    title: "Prophet",
+    body: "Led strategy and growth for a residency housing 16 builders at a time, evaluating 300+ applications, refining how we find, assess, and select the right people to work with, and using my network to back the ones worth betting on.",
+  },
+  {
+    dates: "Jun – Sep 2026",
+    org: "Campus Fund",
+    orgDesc: "SEBI-registered AIF backing student founders in India. $100M latest fund, cheques up to $1M, 35+ portfolio companies.",
+    title: "Investment Associate",
+    body: "Sourced and evaluated 100+ startups across HealthTech, Climate Tech, DeepTech, AI, SaaS, and Consumer Brands, sat on 5 Investment Committees, and supported a live deeptech hardware deal through structuring and diligence.",
+  },
+  {
+    dates: "Jul – Aug 2026",
+    org: "Redstring",
+    orgDesc: "A hiring platform used by 50+ companies, cutting average hiring turnaround from 23 days to under 3, backed by IIM Lucknow and TiE Hyderabad.",
+    title: "Growth & Strategy",
+    body: "Drove growth strategy across a platform used by 50+ companies, including Swipe (YC), Scale Jobs, Keystone Robotix, Neuralis, Neogreens, and 18startup, supporting hiring from entry-level to CXO-level roles alongside the founding team.",
+  },
+  {
+    dates: "Feb – Jul 2026",
+    org: "Mohur",
+    orgDesc: "A startup intelligence platform connecting founders to funding and ecosystem partners.",
+    title: "Growth",
+    body: "Led 3 strategic partnerships with VCs, accelerators, and ecosystem partners, and grew an engaged community of 1,000+ founders, driving 20,000+ impressions and 50% follower growth.",
   },
   {
     dates: "May – Dec 2025",

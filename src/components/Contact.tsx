@@ -1,4 +1,4 @@
-import { Mail, Calendar } from "lucide-react";
+import { Mail } from "lucide-react";
 import type { ComponentType } from "react";
 import { useReveal } from "../hooks/useReveal";
 
@@ -30,11 +30,11 @@ function SubstackIcon({ className }: { className?: string }) {
 }
 
 const links: { href: string; label: string; Icon: IconComponent }[] = [
+  { href: "mailto:gandharv@boundlessvc.com", label: "gandharv@boundlessvc.com", Icon: Mail },
   { href: "mailto:gandharvbhoite@gmail.com", label: "gandharvbhoite@gmail.com", Icon: Mail },
   { href: "https://www.linkedin.com/in/gandharv-bhoite", label: "linkedin.com/in/gandharv-bhoite", Icon: LinkedinIcon },
   { href: "https://x.com/gandharvb_", label: "x.com/gandharvb_", Icon: XIcon },
   { href: "https://substack.com/@gandharvbhoite", label: "Writing on Substack", Icon: SubstackIcon },
-  { href: "https://calendly.com/gandharv-bhoite-yourcampusfund/30min", label: "Book time on Calendly", Icon: Calendar },
 ];
 
 function ContactRow({
