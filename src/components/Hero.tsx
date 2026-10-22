@@ -41,7 +41,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <figure className="mx-auto w-48 md:w-full">
+        <figure className="mx-auto hidden w-48 sm:block md:w-full">
           <img
             src="/assets/headshot.png"
             alt="Gandharv Bhoite"
