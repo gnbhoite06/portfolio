@@ -14,7 +14,7 @@ function ContactCard({ href, kind, label, index }: (typeof links)[number] & { in
   const ref = useReveal<HTMLLIElement>();
   const external = href.startsWith("http");
   return (
-    <li ref={ref} style={{ transitionDelay: `${index * 60}ms` }} className="reveal">
+    <li ref={ref} style={{ transitionDelay: `${index * 60}ms` }} className="reveal sm:last:odd:col-span-2 sm:last:odd:mx-auto sm:last:odd:w-[calc(50%-0.625rem)]">
       <a
         href={href}
         target={external ? "_blank" : undefined}
