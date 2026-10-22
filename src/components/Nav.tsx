@@ -5,6 +5,7 @@ import { useTheme } from "../hooks/useTheme";
 const links = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Work" },
+  { href: "#education", label: "Education" },
   { href: "#product", label: "Product" },
   { href: "#leadership", label: "Leadership" },
   { href: "#contact", label: "Get in Touch" },
@@ -22,12 +23,12 @@ export default function Nav() {
         </a>
 
         <div className="flex items-center gap-2 md:gap-4">
-          <ul className="hidden items-center gap-1 md:flex lg:gap-3">
+          <ul className="hidden items-center md:flex lg:gap-2">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="rounded px-3 py-2 text-sm font-bold transition-opacity hover:opacity-60"
+                  className="rounded px-2 py-2 text-sm font-bold lg:px-3 transition-opacity hover:opacity-60"
                 >
                   {link.label}
                 </a>

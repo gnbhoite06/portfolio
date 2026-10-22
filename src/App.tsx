@@ -2,6 +2,7 @@ import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
+import Education from "./components/Education";
 import Leadership from "./components/Leadership";
 import Certifications from "./components/Certifications";
 import PmHighlight from "./components/PmHighlight";
@@ -26,6 +27,7 @@ function App() {
             <Hero />
             <About />
             <Experience />
+            <Education />
             <PmHighlight />
             <Leadership />
             <Certifications />
