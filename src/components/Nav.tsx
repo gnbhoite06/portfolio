@@ -4,6 +4,7 @@ import { useTheme } from "../hooks/useTheme";
 
 const links = [
   { href: "#about", label: "About" },
+  { href: "#writing", label: "Writing" },
   { href: "#experience", label: "Work" },
   { href: "#education", label: "Education" },
   { href: "#product", label: "Product" },
@@ -23,12 +24,12 @@ export default function Nav() {
         </a>
 
         <div className="flex items-center gap-2 md:gap-4">
-          <ul className="hidden items-center md:flex lg:gap-2">
+          <ul className="hidden items-center lg:flex lg:gap-1 xl:gap-2">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="rounded px-2 py-2 text-sm font-bold lg:px-3 transition-opacity hover:opacity-60"
+                  className="rounded px-2 py-2 text-sm font-bold xl:px-3 transition-opacity hover:opacity-60"
                 >
                   {link.label}
                 </a>
@@ -50,7 +51,7 @@ export default function Nav() {
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            className="flex h-9 w-9 items-center justify-center md:hidden"
+            className="flex h-9 w-9 items-center justify-center lg:hidden"
           >
             {menuOpen ? <X className="h-6 w-6" strokeWidth={2.5} /> : <Menu className="h-6 w-6" strokeWidth={2.5} />}
           </button>
@@ -58,7 +59,7 @@ export default function Nav() {
       </div>
 
       {menuOpen && (
-        <ul className="mt-3 flex flex-col border-t-2 border-[#0a0a0a] pt-2 md:hidden">
+        <ul className="mt-3 flex flex-col border-t-2 border-[#0a0a0a] pt-2 lg:hidden">
           {links.map((link) => (
             <li key={link.href}>
               <a href={link.href} onClick={() => setMenuOpen(false)} className="block py-2 text-base font-bold">
