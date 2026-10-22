@@ -13,24 +13,28 @@ function App() {
     <>
       <a
         href="#main"
-        className="fixed left-4 top-0 z-[100] -translate-y-16 rounded-[2px] bg-accent px-4 py-3 text-paper transition-transform focus:translate-y-4"
+        className="fixed left-4 top-0 z-[100] -translate-y-16 border-neo border-ink bg-pill px-4 py-3 font-bold text-[#0a0a0a] transition-transform focus:translate-y-4"
       >
         Skip to content
       </a>
 
-      <Nav />
+      <div className="min-h-screen px-4 pb-16 pt-5 md:px-6 md:pb-20 md:pt-8">
+        <div className="mx-auto max-w-6xl rounded border-neo border-ink bg-surface p-5 shadow-neo-lg md:p-8">
+          <Nav />
 
-      <main id="main">
-        <Hero />
-        <About />
-        <Experience />
-        <Certifications />
-        <PmHighlight />
-        <Leadership />
-        <Contact />
-      </main>
+          <main id="main">
+            <Hero />
+            <About />
+            <Experience />
+            <PmHighlight />
+            <Leadership />
+            <Certifications />
+            <Contact />
+          </main>
 
-      <Footer />
+          <Footer />
+        </div>
+      </div>
     </>
   );
 }

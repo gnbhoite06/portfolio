@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "../hooks/useReveal";
 import Section from "./Section";
 
@@ -50,26 +51,21 @@ const certs: Cert[] = [
   },
 ];
 
-function CertRow({ cert, index }: { cert: Cert; index: number }) {
+function CertCard({ cert, index }: { cert: Cert; index: number }) {
   const ref = useReveal<HTMLLIElement>();
   return (
-    <li ref={ref} style={{ transitionDelay: `${(index % 2) * 80}ms` }} className="reveal border-b border-line">
+    <li ref={ref} style={{ transitionDelay: `${(index % 2) * 80}ms` }} className="reveal">
       <a
         href={cert.href}
         target="_blank"
         rel="noopener"
-        className="group flex items-baseline justify-between gap-4 py-4 transition-colors duration-200"
+        className="press group flex h-full items-center justify-between gap-4 rounded border-neo border-ink bg-surface p-4 shadow-neo md:p-5"
       >
         <span>
-          <span className="block text-[1rem] font-medium text-ink transition-colors group-hover:text-accent">{cert.title}</span>
-          <span className="mt-0.5 block text-[0.85rem] text-ink-soft">{cert.issuer}</span>
+          <span className="block text-base font-bold md:text-lg">{cert.title}</span>
+          <span className="mt-0.5 block text-sm text-ink-soft">{cert.issuer}</span>
         </span>
-        <span
-          aria-hidden="true"
-          className="text-ink-soft transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
-        >
-          &#8599;
-        </span>
+        <ArrowUpRight aria-hidden="true" className="h-5 w-5 shrink-0" strokeWidth={2.5} />
       </a>
     </li>
   );
@@ -77,10 +73,10 @@ function CertRow({ cert, index }: { cert: Cert; index: number }) {
 
 export default function Certifications() {
   return (
-    <Section title="Certifications">
-      <ul className="grid grid-cols-1 gap-x-10 border-t border-line sm:grid-cols-2">
+    <Section title="Certifications" emoji="📜" subtitle="Things I've picked up along the way" grid>
+      <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         {certs.map((cert, i) => (
-          <CertRow key={cert.title} cert={cert} index={i} />
+          <CertCard key={cert.title} cert={cert} index={i} />
         ))}
       </ul>
     </Section>

@@ -3,40 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --paper: #f3f0e8;
-  --paper-raised: #ebe7dc;
-  --ink: #1a1814;
-  --ink-soft: #5c574d;
-  --line: rgba(26, 24, 20, 0.14);
-  --accent: #9a3f1e;
-  --accent-strong: #7a3016;
-  --accent-tint: #efe2d6;
-  --grain-opacity: 0.045;
+  --canvas: #f6f5f1;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --ink: #0a0a0a;
+  --ink-soft: #555555;
+  --nav: #ff9f6b;
+  --pill: #d7f36b;
+  --pop: #c7b8ff;
+  --grid: #e7e5e0;
+  color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-  --paper: #161512;
-  --paper-raised: #1f1d19;
-  --ink: #ece7dc;
-  --ink-soft: #a39d90;
-  --line: rgba(236, 231, 220, 0.14);
-  --accent: #dc8f66;
-  --accent-strong: #eaa985;
-  --accent-tint: rgba(220, 143, 102, 0.14);
-  --grain-opacity: 0.06;
+  --canvas: #0e0e0e;
+  --surface: #181818;
+  --surface-alt: #1f1f1f;
+  --ink: #f2f0ea;
+  --ink-soft: #a8a59e;
+  --nav: #ff9f6b;
+  --pill: #d7f36b;
+  --pop: #a995ff;
+  --grid: #262626;
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #161512;
-    --paper-raised: #1f1d19;
-    --ink: #ece7dc;
-    --ink-soft: #a39d90;
-    --line: rgba(236, 231, 220, 0.14);
-    --accent: #dc8f66;
-    --accent-strong: #eaa985;
-    --accent-tint: rgba(220, 143, 102, 0.14);
-    --grain-opacity: 0.06;
+    --canvas: #0e0e0e;
+    --surface: #181818;
+    --surface-alt: #1f1f1f;
+    --ink: #f2f0ea;
+    --ink-soft: #a8a59e;
+    --nav: #ff9f6b;
+    --pill: #d7f36b;
+    --pop: #a995ff;
+    --grid: #262626;
+    color-scheme: dark;
   }
 }
 
@@ -51,39 +54,49 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--canvas);
   color: var(--ink);
-  font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-/* Paper grain */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: var(--grain-opacity);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--paper);
+  background: var(--pill);
+  color: #0a0a0a;
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 3px solid var(--pop);
   outline-offset: 3px;
+}
+
+/* Graph-paper backdrop, faded out toward the centre */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: 22px 22px;
+  background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  pointer-events: none;
+}
+
+/* Card that "presses" into its shadow on hover */
+.press {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.press:hover {
+  transform: translate(5px, 5px);
+  box-shadow: none;
 }
 
 .reveal {
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.in-view {
   opacity: 1;
@@ -94,5 +107,8 @@ button:focus-visible {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  .press:hover {
+    transform: none;
   }
 }

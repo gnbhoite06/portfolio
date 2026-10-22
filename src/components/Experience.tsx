@@ -63,24 +63,28 @@ const roles = [
 function Row({ role }: { role: (typeof roles)[number] }) {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <div ref={ref} className="reveal grid gap-2 border-b border-line py-8 first:pt-1 md:grid-cols-[150px_1fr] md:gap-8">
-      <span className="pt-1 font-mono text-[0.78rem] text-ink-soft">{role.dates}</span>
-      <div>
-        <h3 className="text-[1.15rem] font-medium leading-snug text-ink">
-          {role.title} <span className="font-serif text-[1.2rem] italic text-ink-soft">at</span>{" "}
-          <span className="font-serif text-[1.25rem] italic">{role.org}</span>
-        </h3>
-        <p className="mt-1 max-w-[62ch] text-[0.85rem] leading-[1.55] text-ink-soft/80">{role.orgDesc}</p>
-        <p className="mt-3 max-w-[62ch] text-base leading-[1.65] text-ink-soft">{role.body}</p>
-      </div>
+    <div ref={ref} className="reveal">
+      <article className="press rounded border-neo border-ink bg-surface p-5 shadow-neo md:p-6">
+        <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <h3 className="text-xl font-bold md:text-2xl">{role.title}</h3>
+            <p className="text-base font-medium text-ink-soft md:text-lg">{role.org}</p>
+          </div>
+          <span className="inline-block shrink-0 self-start rounded border-2 border-ink bg-pill px-2.5 py-1 font-mono text-xs font-semibold text-[#0a0a0a] md:text-[0.8rem]">
+            {role.dates}
+          </span>
+        </div>
+        <p className="mb-3 text-sm italic leading-[1.55] text-ink-soft">{role.orgDesc}</p>
+        <p className="text-sm leading-[1.65] md:text-base">{role.body}</p>
+      </article>
     </div>
   );
 }
 
 export default function Experience() {
   return (
-    <Section id="experience" title="Experience">
-      <div className="flex flex-col">
+    <Section id="experience" title="Experience" emoji="💼" subtitle="Where I've worked" grid>
+      <div className="space-y-5 md:space-y-6">
         {roles.map((role) => (
           <Row key={`${role.org}-${role.title}`} role={role} />
         ))}

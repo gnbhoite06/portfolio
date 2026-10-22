@@ -19,21 +19,23 @@ const roles = [
 function Row({ role }: { role: (typeof roles)[number] }) {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <div ref={ref} className="reveal grid gap-2 border-b border-line py-8 first:pt-1 md:grid-cols-[150px_1fr] md:gap-8">
-      <span className="pt-1 font-mono text-[0.78rem] text-ink-soft">{role.dates}</span>
-      <div>
-        <h3 className="text-[1.15rem] font-medium leading-snug text-ink">{role.title}</h3>
-        <p className="mt-1 font-serif text-[1.05rem] italic text-ink-soft">{role.org}</p>
-        <p className="mt-3 max-w-[62ch] text-base leading-[1.65] text-ink-soft">{role.body}</p>
-      </div>
+    <div ref={ref} className="reveal">
+      <article className="press h-full rounded border-neo border-ink bg-surface p-5 shadow-neo md:p-6">
+        <span className="mb-4 inline-block rounded border-2 border-ink bg-pop px-2.5 py-1 font-mono text-xs font-semibold text-[#0a0a0a] md:text-[0.8rem]">
+          {role.dates}
+        </span>
+        <h3 className="text-xl font-bold md:text-2xl">{role.title}</h3>
+        <p className="mt-1 text-base font-medium text-ink-soft">{role.org}</p>
+        <p className="mt-3 text-sm leading-[1.65] md:text-base">{role.body}</p>
+      </article>
     </div>
   );
 }
 
 export default function Leadership() {
   return (
-    <Section id="leadership" title="Leadership">
-      <div className="flex flex-col">
+    <Section id="leadership" title="Leadership" emoji="🏛️" subtitle="On campus">
+      <div className="grid gap-5 md:grid-cols-2 md:gap-6">
         {roles.map((role) => (
           <Row key={role.title} role={role} />
         ))}

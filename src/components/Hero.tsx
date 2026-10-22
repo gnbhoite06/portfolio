@@ -1,43 +1,56 @@
+import { Mail } from "lucide-react";
+import { LinkedInIcon, SubstackIcon, XIcon } from "./Icons";
+
+const socials = [
+  { href: "https://www.linkedin.com/in/gandharv-bhoite", label: "LinkedIn", Icon: LinkedInIcon },
+  { href: "https://x.com/gandharvb_", label: "X", Icon: XIcon },
+  { href: "https://substack.com/@gandharvbhoite", label: "Substack", Icon: SubstackIcon },
+];
+
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="mx-auto grid max-w-[1200px] gap-12 px-6 pb-16 pt-14 md:grid-cols-[1fr_260px] md:items-end md:pb-24 md:pt-28"
-    >
-      <div>
-        <p className="mb-8 font-mono text-[0.78rem] text-ink-soft">
-          Currently on the investments team at <span className="text-ink">Boundless Ventures</span>
-        </p>
-
-        <h1 className="max-w-[14ch] font-serif text-[2.9rem] font-normal leading-[1.02] tracking-[-0.02em] text-ink [text-wrap:balance] sm:text-6xl md:text-[5.5rem]">
-          Venture capital and <em className="text-accent">startups</em>.
-        </h1>
-
-        <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-ink-soft">
-          I work across venture capital and early-stage startups, while studying at BITS Pilani, Goa.
-        </p>
-
-        <a
-          href="#contact"
-          className="group mt-10 inline-flex items-center gap-2 border-b border-ink pb-1 text-[0.95rem] font-medium text-ink transition-colors duration-200 hover:border-accent hover:text-accent"
-        >
-          Get in touch
-          <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
-            &rarr;
+    <section id="top" className="relative mb-16 md:mb-24">
+      <div className="grid-bg" aria-hidden="true" />
+      <div className="relative z-10 grid gap-10 py-4 md:grid-cols-[1fr_240px] md:items-center md:py-8">
+        <div>
+          <span className="mb-6 inline-block rounded border-2 border-ink bg-pill px-3 py-1 font-mono text-xs font-semibold text-[#0a0a0a] md:text-sm">
+            Investments @ Boundless Ventures
           </span>
-        </a>
-      </div>
+          <h1 className="mb-6 text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+            Hi, I&rsquo;m Gandharv
+          </h1>
+          <p className="mb-8 max-w-[40ch] text-lg font-medium text-ink/90 sm:text-xl md:text-2xl">
+            I work across venture capital and early-stage startups, while studying at BITS Pilani, Goa.
+          </p>
+          <div className="flex flex-wrap items-center gap-5">
+            {socials.map(({ href, label, Icon }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener"
+                aria-label={label}
+                className="transition-opacity hover:opacity-60"
+              >
+                <Icon className="h-8 w-8 md:h-9 md:w-9" />
+              </a>
+            ))}
+            <a href="mailto:gandharvbhoite@gmail.com" aria-label="Email" className="transition-opacity hover:opacity-60">
+              <Mail className="h-8 w-8 md:h-9 md:w-9" strokeWidth={2} />
+            </a>
+          </div>
+        </div>
 
-      <figure className="hidden md:block">
-        <img
-          src="/assets/headshot.png"
-          alt="Gandharv Bhoite"
-          width={400}
-          height={400}
-          className="aspect-square w-full rounded-[2px] object-cover grayscale contrast-[1.05] transition-[filter] duration-700 hover:grayscale-0"
-        />
-        <figcaption className="mt-3 font-mono text-[0.72rem] text-ink-soft">Gandharv Bhoite, Goa</figcaption>
-      </figure>
+        <figure className="mx-auto w-48 md:w-full">
+          <img
+            src="/assets/headshot.png"
+            alt="Gandharv Bhoite"
+            width={400}
+            height={400}
+            className="aspect-square w-full rounded border-neo border-ink bg-pop object-cover shadow-neo-lg"
+          />
+        </figure>
+      </div>
     </section>
   );
 }
